@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlrewrite>
+	<rule>
+		<!-- ^:bắt đầu $:ket thuc [a-z]:1 ky tu tu a den z viet thuong [A-Z]:1 
+			ky tu tu a den z viet hoa ([a-z]*):dai dien 0 hoac nhieu ky tu tu a den z 
+			viet thuong ([A-Z]*):dai dien 0 hoac nhieu ky tu tu a den z viet hoa (.*) 
+			dai dien 0 hoac nhieu ki tu (.+) dai dien 1 hoac nhieu ki tu ([a-zA-Z]* || 
+			+) : [0-9]:CAC SO TU 0 -9 [0-9]+):CAC SO TU 1 DEN N [0-9]*):CAC SO TU 0 DEN 
+			N -->
+		<from>^/category/(.+)-([0-9]+).html$</from>
+		<to>/cat?id=$2</to>
+	</rule>
+	<rule>
+		<from>^/detail/(.+)/(.+)-([0-9]+).html$</from>
+		<to>/detail?id=$3</to>
+	</rule>
+	<rule>
+		<from>^/category/(.+)-([0-9]+).([0-9]+).html$</from>
+		<to>/cat?id=$2&amp;page=$3</to>
+	</rule>
+	<rule>
+		<from>^/home/page-([0-9]+).html$</from>
+		<to>/home?page=$1</to>
+	</rule>
+
+</urlrewrite>
